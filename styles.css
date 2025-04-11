@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'MedievalSharp', Arial, sans-serif;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('parchment.jpg') center/cover no-repeat;
+  border: 50px solid transparent;
+  border-image: url('parchment.jpg') 50 stretch;
+}
+
+#content {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  overflow: hidden;
+}
+
+#sidebar {
+  width: 300px;
+  background-color: rgba(34, 34, 34, 0.8);
+  padding: 15px;
+  overflow-y: auto;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
+  border: 2px solid #444;
+  border-radius: 8px;
+}
+
+#map-container {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+#map-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: grab;
+  image-rendering: crisp-edges;
+  max-width: none;
+  transform-origin: 0 0;
+  transform: scale(3);
+  -webkit-mask-image: radial-gradient(ellipse at center, white 70%, transparent 100%);
+          mask-image: radial-gradient(ellipse at center, white 70%, transparent 100%);
+}
+
+#crosshair {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 15;
+  display: block;
+  background-image: url('crosshair.png');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+#crosshair::before,
+#crosshair::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  transform-origin: center;
+}
+
+#crosshair::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#crosshair::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.coord-input {
+  margin-bottom: 15px;
+}
+
+.coord-group {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+label, input, select, span {
+  font-family: 'MedievalSharp', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 2px #000;
+}
+
+input, select {
+  padding: 8px;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+input {
+  width: 50px;
+}
+
+select {
+  width: 80px;
+}
+
+button {
+  background-image: url('button.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #e0e0e0;
+  border: none;
+  padding: 10px;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: 'MedievalSharp', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin-top: 10px;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+.zoom-controls {
+  display: flex;
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.zoom-btn {
+  flex: 1;
+  padding: 8px;
+  background-color: #333;
+}
+
+h2 {
+  font-family: 'MedievalSharp', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #dd6900;
+  margin-top: 0;
+  text-shadow: 1px 1px 2px #000;
+}

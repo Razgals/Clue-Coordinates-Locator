@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Gielinor Treasure Hunter Compass",
+  "version": "6.1",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["map2.png", "crosshair.png", "parchment.jpg", "MedievalSharp.ttf", "button.jpg"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["storage"],
+  "icons": {
+    "128": "icon.png"
+  }
+}
